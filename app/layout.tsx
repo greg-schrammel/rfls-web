@@ -1,19 +1,13 @@
-import { Inter } from 'next/font/google'
 import './globals.css'
 
-const sans = Inter({ subsets: ['latin'], variable: '--font-sans' })
-
 export const metadata = {
-  title: 'Rfls',
-  description: 'Raffles but onchain',
+  title: 'nums',
+  description: '',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      className={`font-sans ${sans.variable} bg-gray-100 text-gray-900 selection:bg-red-400/20`}
-    >
+    <html lang="pt-br" className={`font-sans text-[#1E1A16]`}>
       <body>{children}</body>
     </html>
   )

@@ -4,7 +4,11 @@ export default {
   content: ['./components/**/*.{js,ts,jsx,tsx,mdx}', './app/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     fontFamily: {
-      sans: `var(--font-sans)`,
+      sans: `Arial`,
+    },
+    colors: {
+      black: '#1E1A16',
+      white: '#FFFFFF',
     },
     // fontMetrics: {
     //   sans: {
