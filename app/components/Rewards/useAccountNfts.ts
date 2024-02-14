@@ -61,15 +61,17 @@ const fetchAccountNfts = async ({ chain, account }: { chain: ChainName; account:
     .flat(2)
 
   const nftsWithPreloadedImages = await Promise.all(
-    parsedResponse.filter(n => !!n.image_256).map(
-      (nft): Promise<(typeof parsedResponse)[number] | null> =>
-        new Promise((r) => {
-          const image = new Image()
-          image.src = nft.image_256
-          image.onload = () => r(nft)
-          image.onerror = () => r(null)
-        }),
-    ),
+    parsedResponse
+      .filter((n) => !!n.image_256)
+      .map(
+        (nft): Promise<(typeof parsedResponse)[number] | null> =>
+          new Promise((r) => {
+            const image = new Image()
+            image.src = nft.image_256
+            image.onload = () => r(nft)
+            image.onerror = () => r(null)
+          }),
+      ),
   )
 
   return nftsWithPreloadedImages.filter(Boolean)
@@ -81,13 +83,14 @@ export const useAccountNFTs = ({
   chain,
   account,
   ...options
-}: { chain: ChainName; account: Address } & Omit<
+}: { chain?: ChainName; account?: Address } & Omit<
   UseQueryOptions<NFTs>,
   'queryKey' | 'queryFn' | 'initialData'
 >) => {
   return useQuery<NFTs>({
     queryKey: ['nfts', chain, account],
-    queryFn: () => fetchAccountNfts({ chain, account }),
+    queryFn: () => fetchAccountNfts({ chain: chain!, account: account! }),
+    enabled: !!chain && !!account,
     ...options,
   })
 }

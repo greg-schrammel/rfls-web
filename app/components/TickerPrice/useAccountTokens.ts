@@ -1,0 +1,21 @@
+// {
+//   "contract_decimals": 18,
+//   "contract_name": "Staked Yearn CRV Vault",
+//   "contract_ticker_symbol": "st-yCRV",
+//   "contract_address": "0x27b5739e22ad9033bcbf192059122d163b60349d",
+//   "supports_erc": ["erc20"],
+//   "logo_url": "https://logos.covalenthq.com/tokens/1/0x27b5739e22ad9033bcbf192059122d163b60349d.png",
+//   "last_transferred_at": "2023-04-18T01:36:59Z",
+//   "native_token": false,
+//   "type": "cryptocurrency",
+//   "is_spam": false,
+//   "balance": "2414638100483987165475",
+//   "balance_24h": "2414638100483987165475",
+//   "quote_rate": 1.444,
+//   "quote_rate_24h": 1.446,
+//   "quote": 3486.7375,
+//   "pretty_quote": "$3,486.74",
+//   "quote_24h": 3491.5667,
+//   "pretty_quote_24h": "$3,491.57",
+//   "nft_data": null
+// }
